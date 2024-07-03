@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@media screen and (min-width:375px) {
+    body {
+        font-size: 14px;
+        --top-value: 88%;
+        --animate:2s;
+    }
+
+    .blue-bg {
+        position: relative;
+        height: 70vh;
+        width: 100vw;
+        background: #56CCF2;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to top, #2F80ED, #56CCF2);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+    }
+
+    .heading {
+        position: absolute;
+        top: 1rem;
+        left: 25%;
+    }
+
+    .feature {
+        position: absolute;
+        top: 5rem;
+        left: 20%;
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .feature div {
+        padding: 0.5em 2em;
+        background-color: rgb(136, 212, 247);
+    }
+
+    .feature div:hover {
+        cursor: pointer;
+        color: white;
+        background-color: rgb(10, 94, 133);
+    }
+
+    #score {
+        position: absolute;
+        top: 9rem;
+        left: 80%;
+    }
+
+    #highest_score{
+        position: absolute;
+        top: 10rem;
+        left: 80%;
+    }
+
+
+    .angryBird {
+        position: absolute;
+        top: var(--top-value);
+        left: 3%;
+        width: 4vw;
+        height: 6vh;
+        z-index: 20;
+        /* border: 1px solid black; */
+
+    }
+
+    #tree {
+        position: absolute;
+        top: 89%;
+        left: 90%;
+        width: 6vw;
+        height: 8vh;
+        z-index: 10;
+        /* border: 1px solid black; */
+    } 
+
+    .moving-object {
+        animation-name: moveRightToLeft;
+        animation-duration: calc(var(--animate) - 0.7s);
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    .grass {
+        position: relative;
+        height: 30vh;
+        width: 100vw;
+        background: #76b852;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #8DC26F, #76b852);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to bottom, #9ed87d, #5fc22a);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    }
+    .congrats{
+        position: absolute;
+        left: 95%;
+        top: 60%;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+    }
+
+
+    @keyframes moveRightToLeft {
+        0% {
+            left: 90%;
+        }
+
+        100% {
+            left: 0%;
+        }
+    }
+
+    .spaceBar {
+        animation: jump 1s;
+    }
+
+    @keyframes jump {
+        0% {
+            top: var(--top-value);
+        }
+
+        50% {
+            top: calc(var(--top-value) - 10rem);
+        }
+
+        100% {
+            top: var(--top-value);
+        }
+    }
+}
+
+@media screen and (min-width:768px) {
+
+    body {
+        font-size: 16px;
+    }
+
+    .heading {
+        left: 35%;
+    }
+
+    .feature {
+        left: 31%;
+    }
+
+}
+
+@media screen and (min-width:1024px) {
+    .heading {
+        left: 39%;
+    }
+
+    .feature {
+        left: 38%;
+    }
+
+    .angryBird {
+        height: 8vh;
+        width: 4vw;
+    }
+
+    #tree {
+        top: 86%;
+        width: 6vw;
+        height: 12vh;
+    }
+
+    .moving-object {
+        animation-duration: var(--animate);
+    }
+
+}
